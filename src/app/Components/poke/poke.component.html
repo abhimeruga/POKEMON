@@ -1,0 +1,26 @@
+<div class="box">
+    <div *ngIf="loading">
+        <span class="spinner-border text-primary">
+        </span>
+        <h4>Pokemon Loading...</h4>
+    </div>
+    </div>
+    <div class=" box movies-style" *ngIf="!loading">
+        <h3>Details</h3>
+        <div *ngIf="loading">
+            <span class="spinner-border">Loading...</span>
+        </div>
+        <div class="poke" *ngIf="!loading">
+            <hr style="color:white; background-color: white;" />
+            <h4>name: {{pokemon.name}}</h4>
+            <h4>Abilities:  {{pokemon.abilities.length}}</h4>
+            <h4>Base_experience: {{pokemon.base_experience}} </h4>
+            <h4>Height: {{pokemon.height}}</h4>
+            <h4>Active: {{pokemon.is_default}}</h4>
+            <h4>Total Moves: {{pokemon.moves.length}}</h4>
+            <h4>Order: {{pokemon.order}}</h4>
+            <h4>Weight: {{pokemon.weight}}</h4>
+            <hr style="color:white; background-color: white;" />
+        </div>
+        <button class="btn btn-primary" (click)="goBack()"> Back </button>
+    </div>

@@ -1,0 +1,24 @@
+<div class="box">
+    <div *ngIf="loading">
+        <span class="spinner-border text-primary">
+        </span>
+        <h4>Pokemons Loading...</h4>
+    </div>
+    </div>
+    <div class=" box movies-style" *ngIf="!loading">
+       <div class="">
+        <h3>List of POKEMON's</h3>
+        <input type="text" class="txt" placeholder="search pokemon" #valuesearch 
+        (input)="search(valuesearch.value)" > 
+       </div>
+        <div class="" *ngIf="pokemonList.length > 0">
+            <hr style="color:white; background-color: white;" />
+            <div *ngFor="let pokemon of pokemonList" >
+                 <h3 style="color:white" (click)="getPokemonDetails(pokemon.url)"> {{pokemon.name}} </h3>
+                <hr style="color:white; background-color: white;" />
+            </div>
+        </div>
+        <div *ngIf="pokemonList.length == 0">
+            <h3>No pokemons Found!! </h3>
+        </div>
+    </div>
